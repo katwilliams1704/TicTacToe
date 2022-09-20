@@ -4,11 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tictactoe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>TicTacToe</title>
 
 </head>
 <body>
-    <h1>TicTacToe</h1>
     
+    <section id="homepage">
+        <header>
+        <h1>Tic-Tac-Toe</h1>
+        <h2>Begin your mission</h2>
+        </header>
+        <div class="grid-area">
+            <div data-cell-index="0" class="cell"></div>
+            <div data-cell-index="1" class="cell"></div>
+            <div data-cell-index="2" class="cell"></div>
+            <div data-cell-index="3" class="cell"></div>
+            <div data-cell-index="4" class="cell"></div>
+            <div data-cell-index="5" class="cell"></div>
+            <div data-cell-index="6" class="cell"></div>
+            <div data-cell-index="7" class="cell"></div>
+            <div data-cell-index="8" class="cell"></div>
+        </div>
+        <div class="winning-message" id="winningMessage">
+            <div id="winning-message"></div>
+        <h3 class="display player">It's the <span class="playersTurn">Astronaut</span>'s turn!</h3>
+        <div class="container">
+            <div class="playername" id="player1">
+                <img id="astronaut" src="Images/cute astronaut.jpg">
+                <p class="playername">Astronaut</p>
+                <p>Score: <span id="pulse">0</span></p>
+            </div>
+            <div class="playername" id="player2">
+                <img id="alien" src="Images/cute alien.jpg" alt="alien">
+                <p class="playername">Alien</p>
+                <p>Score: <span id="pulse">0</span></p>
+            </div>
+        <footer>
+            <button class="restart-game" onclick="buttonSound.play()">Abort Mission</button>
+            <button class="audio-control" onclick="buttonSound.play()">Music On/Off</button>
+            <button class="planets" onclick="buttonSound.play()">Planets</button>
+        </footer>
+        <h4>Built by Katrina Williams</h4>
+        <h5>Hosted by GitHub</h5>
+        </div>
+    </section>  
+    <script type="text/javascript" src="script.js"></script> 
 </body>
 </html>
