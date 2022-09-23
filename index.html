@@ -9,14 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>TicTacToe</title>
-
 </head>
 <body>
-    
     <section id="homepage">
         <header>
         <h1>Tic-Tac-Toe</h1>
         <h2>Begin your mission</h2>
+        <img src="Images/astroid.png" id="astroid" class="astroid">
         </header>
         <div class="grid-area">
             <div data-cell-index="0" class="cell"></div>
@@ -43,13 +42,18 @@
                 <p class="playername">Alien</p>
                 <p>Score: <span id="pulse">0</span></p>
             </div>
-        <footer>
+        </div>
+        <div class="button-container">
             <button class="restart-game" onclick="buttonSound.play()">Abort Mission</button>
-            <button class="audio-control" onclick="buttonSound.play()">Music On/Off</button>
+            <button class="audio-control" onclick="gameMusic.play()">Music On/Off</button>
             <button class="planets" onclick="buttonSound.play()">Planets</button>
-        </footer>
+        </div>
+        <div id="cursor"></div>
         <h4>Built by Katrina Williams</h4>
         <h5>Hosted by GitHub</h5>
+    <footer>
+    </footer>
+        <audio></audio>
         </div>
     </section>  
     <script type="text/javascript" src="script.js"></script> 
