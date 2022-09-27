@@ -50,8 +50,7 @@ cells.forEach(function(cell){
 		cell.textContent = currentPlayer
 		switchPlayer()
 		checkForWinner()
-		tokenSound()
-		handleClick()
+		// tokenSound()
 		
 	})
 })
@@ -59,79 +58,72 @@ const checkForWinner = () => { // Still need to add draw conditions
 
 	// To check 'X'
 	if (cells[0].textContent === 'X' && cells[1].textContent === 'X' && cells[2].textContent === 'X') {
-		console.log (messages.playerMode.astronautWin.join(' '))
+		alert(messages.playerMode.astronautWin.join(' '))
 	} else if
 		(cells[3].textContent === 'X' && cells[4].textContent === 'X' && cells[5].textContent === 'X') {
-		console.log (messages.playerMode.astronautWin.join(' '))
+		alert(messages.playerMode.astronautWin.join(' '))
 	} else if 
 		(cells[6].textContent === 'X' && cells[7].textContent === 'X' && cells[8].textContent === 'X') {
-		console.log (messages.playerMode.astronautWin.join(' '))
+		alert(messages.playerMode.astronautWin.join(' '))
 	} else if
 		(cells[0].textContent === 'X' && cells[3].textContent === 'X' && cells[6].textContent === 'X') {
-		console.log (messages.playerMode.astronautWin.join(' '))
+		alert(messages.playerMode.astronautWin.join(' '))
 	} else if 
 		(cells[1].textContent === 'X' && cells[4].textContent === 'X' && cells[7].textContent === 'X') {
-		console.log (messages.playerMode.astronautWin.join(' '))
+		alert(messages.playerMode.astronautWin.join(' '))
 	} else if
 		(cells[2].textContent === 'X' && cells[5].textContent === 'X' && cells[8].textContent === 'X') {
-		console.log (messages.playerMode.astronautWin.join(' '))
+		alert(messages.playerMode.astronautWin.join(' '))
 	} else if 
 		(cells[0].textContent === 'X' && cells[4].textContent === 'X' && cells[8].textContent === 'X') {
-		console.log (messages.playerMode.astronautWin.join(' '))
+		alert(messages.playerMode.astronautWin.join(' '))
 	} else if
 		(cells[2].textContent === 'X' && cells[4].textContent === 'X' && cells[6].textContent === 'X') {
-		console.log (messages.playerMode.astronautWin.join(' '))
+		alert(messages.playerMode.astronautWin.join(' '))
 	// To check 'O'
 	} else if 
 		(cells[0].textContent === 'O' && cells[1].textContent === 'O' && cells[2].textContent === 'O') {
-		console.log (messages.playerMode.alienWin.join(' '))
+		alert(messages.playerMode.alienWin.join(' '))
 	} else if
 		(cells[3].textContent === 'O' && cells[4].textContent === 'O' && cells[5].textContent === 'O') {
-		console.log (messages.playerMode.alienWin.join(' '))
+		alert(messages.playerMode.alienWin.join(' '))
 	} else if 
 		(cells[6].textContent === 'O' && cells[7].textContent === 'O' && cells[8].textContent === 'O') {
-		console.log (messages.playerMode.alienWin.join(' '))
+		alert(messages.playerMode.alienWin.join(' '))
 	} else if
 		(cells[0].textContent === 'O' && cells[3].textContent === 'O' && cells[6].textContent === 'O') {
-		console.log (messages.playerMode.alienWin.join(' '))
+		alert(messages.playerMode.alienWin.join(' '))
 	} else if 
 		(cells[1].textContent === 'O' && cells[4].textContent === 'O' && cells[7].textContent === 'O') {
-		console.log (messages.playerMode.alienWin.join(' '))
+		alert(messages.playerMode.alienWin.join(' '))
 	} else if
 		(cells[2].textContent === 'O' && cells[5].textContent === 'O' && cells[8].textContent === 'O') {
-		console.log (messages.playerMode.alienWin.join(' '))
+		alert(messages.playerMode.alienWin.join(' '))
 	} else if 
 		(cells[0].textContent === 'O' && cells[4].textContent === 'O' && cells[8].textContent === 'O') {
-		console.log (messages.playerMode.alienWin.join(' '))
+		alert(messages.playerMode.alienWin.join(' '))
 	} else if
 		(cells[2].textContent === 'O' && cells[4].textContent === 'O' && cells[6].textContent === 'O') {
-		console.log (messages.playerMode.alienWin.join(' '))
-	//} else if 
-	//	(cells[0].textContent === '' && cells[0].textContent === '' && cells[0].textContent === '') {
-	//	console.log (messages.playerMode.draw.join('draw'))
-	// } else 
-	// (cells[''].textContent === '' && cells[''].textContent === '' && cells[''].textContent === '') {
-	// 	console.log (messages.playerMode.draw.join('draw'))
-	// To check if draw
+		alert(messages.playerMode.alienWin.join(' '))
 }}
 
 
 // Places a player's token and the player's audio when a cell is clicked
-const tokenSound = (clickedCell) => {
-    if (currentPlayer === 'X') {
-        clickedCell.classList.add('astronaut')
-		// player 'X' click sound
-        if (!isPlaying) {
-            rocketSound.play('Audio/rocket.wav') // TEST 
-        } 
-    } else if (currentPlayer === 'O') {
-        clickedBlock.classList.add('alien')
-		// player 'O' click sound
-        if (!isPlaying) {
-            alienSound.play('Audio/alien.wav') // TEST
-        }
-    } 
-}
+// const tokenSound = (player, clickedCell) => {
+//     if (currentPlayer === 'X') {
+//         clickedCell.classList.add('astronaut')
+// 		// player 'X' click sound
+//         if (!isPlaying) {
+//             rocketSound.play('Audio/rocket.wav') // TEST 
+//         } 
+//     } else if (currentPlayer === 'O') {
+//         clickedBlock.classList.add('alien')
+// 		// player 'O' click sound
+//         if (!isPlaying) {
+//             alienSound.play('Audio/alien.wav') // TEST
+//         }
+//     } 
+// }
 
 // Function for blocking placing of token, over existing token in cell
 const handleClick = () => { 
@@ -146,11 +138,10 @@ const handleClick = () => {
         } else {
             switchPlayer()
         }
-		
     }
 }
 
-// Alternating players token after each click 
+// Alternating players token after each click ========= FIX OVERLAP
 const switchPlayer = () => {
     if (currentPlayer === astronaut) {
         currentPlayer = alien
@@ -190,37 +181,6 @@ const messages = {
 	}
 }
 
-
-// Count the score of each player 
-// const winningScore = (index) => {
-// 	let propertyIndex = index.toString()
-// 	indexFilled[propertyIndex] = currentPlayer;
-// 	for (let wins of winningCombinations) {
-// 		let move0 = wins[0]
-// 		let move1 = wins[1]
-// 		let move2 = wins[2]
-// 		// if astronaut wins
-// 		if (indexFilled[move0] === 'astronaut' && indexFilled[move1] === 'astronaut' && indexFilled[move2] === 'astronaut') {
-// 			messages.playerMode.astronautWin[0, 1]
-// 			return true
-// 		}
-// 		// if alien wins
-// 		else if (indexFilled[move0] === 'alien' && indexFilled[move1] === 'alien' && indexFilled[move2] === 'alien') {
-// 			messages.playerMode.alienWin[0, 1]
-// 			return true
-// 		// if there's a draw
-// 	} 
-// 	if (Object.keys(indexFilled).length === 9) {
-// 		messages.playerMode.draw[0]
-// 		if (playSounds) {
-// 			drawSound.play()
-// 		}
-// 		return true
-// 	} else {
-// 		return false
-// 	}
-
-// }}
 
 // End game and show result ========== TO BE ADDED TO HTML AND CSS
 const showResult = () => {
